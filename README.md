@@ -18,6 +18,7 @@ Then create your Makefile file and place includes you want into it. Just like th
 
 #### targets available in *Makefile.basic*
 * **clean** - it completely cleans up your working tree with hard-core command `git clean -dxf`.
+
 #### targets available in *Makefile.nuget*
 * **nuget-pack** - it looks for *.nuspec* files, builds related *.csproj* file with *release* configuration and packs the output into NuGet package. Please note, that *.nuspec* file and *.csproj* should have the same basename.
 * **nuget-push** - it looks for *.nupkg* files and pushes them to source provided by `${nuget-source}` variable.
