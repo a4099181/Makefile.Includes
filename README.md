@@ -22,6 +22,7 @@ Then create your Makefile file and place includes you want into it. Just like th
 #### targets available in *Makefile.haskell*
   * `hindent` - applies [hindent] utility to all `.hs` files.
   * `scan` - applies [scan] utility to all `.hs` files.
+  * `test` - it executes Hspec tests and is just shortcut for `runhaskell -isrc -itest test/Spec.hs`.
 
 #### targets available in *Makefile.nuget*
   * `nuget-pack` - it looks for *.nuspec* files, builds related *.csproj* file with *release* configuration and packs the output into NuGet package. Please note, that *.nuspec* file and *.csproj* should have the same basename.

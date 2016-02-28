@@ -3,3 +3,6 @@ hindent:
 
 scan:
 	find . -name \*.hs -type f -exec scan --inplace-modify '{}' \;
+
+test:
+	runhaskell -isrc -itest test/Spec.hs
