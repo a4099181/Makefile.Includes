@@ -1,2 +1,5 @@
 hindent:
 	find . -name \*.hs -type f -exec hindent --style gibiansky '{}' \;
+
+scan:
+	find . -name \*.hs -type f -exec scan --inplace-modify '{}' \;
