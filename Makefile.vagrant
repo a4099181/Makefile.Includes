@@ -1,0 +1,3 @@
+box-hyperv: metadata.json
+	tar -czf hyperv.box --verbose --totals $< "Virtual Hard Disks"/*.vhdx "Virtual Machines"/*.XML
+

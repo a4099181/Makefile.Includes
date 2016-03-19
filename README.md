@@ -33,5 +33,8 @@ Then create your Makefile file and place includes you want into it. Just like th
     make nuget-setApiKey nuget-apikey=<your-api-key-here>
     ```
 
+#### targets available in *Makefile.vagrant*
+  * `box-hyperv` - creates `tar` archive for current folder. That is the way that hyper-v virtual machine becomes vagrant box.
+
 [hindent]: https://github.com/chrisdone/hindent
 [scan]: http://hackage.haskell.org/package/scan
