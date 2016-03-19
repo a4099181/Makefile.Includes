@@ -36,5 +36,16 @@ Then create your Makefile file and place includes you want into it. Just like th
 #### targets available in *Makefile.vagrant*
   * `box-hyperv` - creates `tar` archive for current folder. That is the way that hyper-v virtual machine becomes vagrant box.
 
+#### targets available in *Makefile.vsix*
+  * `download` - resolves current download link and downloads it.
+  * `install` - installs downloaded Visual Studio extensions.
+  * `clean` - removes download destination folder.
+
+  Complete solution to install Visual Studio Extension:
+
+  ```shell
+  make download install clean vsix-id=<vs-extension-guid>
+  ```
+
 [hindent]: https://github.com/chrisdone/hindent
 [scan]: http://hackage.haskell.org/package/scan

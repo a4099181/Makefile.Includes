@@ -1,0 +1,23 @@
+vsix-downloaded=./.vsix-downloaded
+vsix-gallery=https://visualstudiogallery.msdn.microsoft.com/
+prefix=
+vsix-id=
+
+download: vsix-uri = $(shell ${prefix}curl --silent ${vsix-gallery}${vsix-id} \
+	| ${prefix}grep --only-matching --regexp="${vsix-id}.*\.vsix" \
+	| ${prefix}uniq)
+
+download:
+	${prefix}curl --silent --create-dirs \
+	    --output "${vsix-downloaded}/${vsix-id}.vsix" \
+	    ${vsix-gallery}${vsix-uri}
+
+install: vsix-installer = $(shell ${prefix}find \
+	    "/c/Program Files (x86)/" \
+	    -name "VSIXInstaller.exe" | ${prefix}head -1)
+install: ${vsix-downloaded}/${vsix-id}.vsix
+	"${vsix-installer}" /quiet /admin "$<"
+
+clean:
+	${prefix}rm --recursive --force --verbose ${vsix-downloaded}
+
