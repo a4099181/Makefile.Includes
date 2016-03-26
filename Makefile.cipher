@@ -1,0 +1,15 @@
+prefix=
+in=
+to=
+key=
+
+encrypt: ${in}
+	${prefix}openssl smime -encrypt -binary -aes-256-cbc \
+	    -in $< -out ${out} -outform DER ${key}
+
+decrypt: ${in}
+	${prefix}openssl smime -decrypt -binary \
+	    -in ${in} -inform DEM -out ${out} -inkey ${key}
+
+#encrypt='openssl smime -encrypt -binary -aes-256-cbc -outform DER `cygpath -u $USERPROFILE`/.public.key'
+#decrypt='openssl smime -decrypt -binary -inform DEM -inkey ~/.ssl/private.pem'
